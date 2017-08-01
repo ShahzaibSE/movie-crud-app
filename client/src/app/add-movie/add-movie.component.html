@@ -4,29 +4,61 @@
 
 <div class="card">
  
-  <div class="col-lg-5 col-md-12 col-sm-12">
+  <!-- <div class="col-lg-5 col-md-12 col-sm-12">
     <h1>Add Movie</h1>
-  </div>
+  </div> -->
 
-  <div class>
+  <div class="container">
     <form method="POST">
      
-      <div> 
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Movie ID">
+      <div class="form_alignment">
+        <div> 
+          <div class="input-group col-lg-11 input_field_spacing">
+            <label>ID</label>
+            <input id="ID" type="text" class="form-control" placeholder="Movie ID" required>
+          </div>
         </div>
-        <div class="input-group">
+        <div> 
+          <div class="input-group col-lg-11 input_field_spacing">
+            <label>Title</label>
+            <input id="title" type="text" class="form-control" placeholder="Movie title" required>
+          </div>
+        </div>
+        <div> 
+          <div class="input-group col-lg-11 input_field_spacing">
+            <label>Director</label>
+            <input id="director" type="text" class="form-control" placeholder="Movie ID" required>
+          </div>
+        </div>
+        <div> 
+          <div class="input-group col-lg-11 input_field_spacing">
+            <label>Producer</label>
+            <input id="producer" type="text" class="form-control" placeholder="Movie producer" required>
+          </div>
+        </div>
+        <div> 
+          <div class="input-group col-lg-11 input_field_spacing">
+            <label>Rate</label>
+            <select class="form-control">
+              <!-- <option value="sample value">Sample Value</option> -->
+              <option selected></option>
+              <option  *ngFor="let rate of available_ratings" value={{rate}}>{{ rate }}</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <!-- <div class="input-group col-lg-10 input_field_spacing">
           <input type="text" class="form-control" placeholder="Movie Title">
         </div>
-        <div class="input-group">
+        <div class="input-group col-lg-10 input_field_spacing">
           <input type="text" class="form-control" placeholder="Movie Director">
         </div>
-        <div class="input-group">
+        <div class="input-group col-lg-10 input_field_spacing">
           <input type="text" class="form-control" placeholder="Movie Producer">
-        </div>
-        <div>
-          <button type="button" class="btn btn-danger btn-lg btn-block">Submit</button>
-        </div>
+        </div> -->
+     </div>
+     <div class="col-lg-12 col-md-12 col-sm-12 submit_button">
+        <button type="button" class="btn btn-danger btn-lg btn-block">Submit</button>
      </div>
 
     </form>
@@ -35,6 +67,6 @@
 
 </div>
 
-<div class="alert alert-success" role="alert">
+<!-- <div class="alert alert-success" role="alert">
   You have <strong>successfully</strong> added your movie! 
-</div>
+</div> -->
