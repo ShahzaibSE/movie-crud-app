@@ -17,6 +17,11 @@ import { EditMovieComponent } from './edit-movie/edit-movie.component';
 
 //Routes
 import { routes } from './app.routes';
+import { LoginComponent } from './login/login.component';
+
+//ReCaptcha
+import { RecaptchaModule } from 'ng2-recaptcha';
+import { ReCaptchaComponent } from './re-captcha/re-captcha.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,9 @@ import { routes } from './app.routes';
     MovieDetailComponent,
     HeaderComponent,
     MenuComponent,
-    EditMovieComponent
+    EditMovieComponent,
+    LoginComponent,
+    ReCaptchaComponent
   ],
   imports: [
     BrowserModule,
