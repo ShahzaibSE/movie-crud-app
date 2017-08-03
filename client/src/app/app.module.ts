@@ -22,6 +22,10 @@ import { LoginComponent } from './login/login.component';
 //ReCaptcha
 import { RecaptchaModule } from 'ng2-recaptcha';
 import { ReCaptchaComponent } from './re-captcha/re-captcha.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+//Material Imports
+import {MdCardModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -33,13 +37,15 @@ import { ReCaptchaComponent } from './re-captcha/re-captcha.component';
     MenuComponent,
     EditMovieComponent,
     LoginComponent,
-    ReCaptchaComponent
+    ReCaptchaComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MdCardModule
   ],
   providers: [ApiServiceService],
   bootstrap: [AppComponent]

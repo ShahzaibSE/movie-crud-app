@@ -2,6 +2,7 @@
 
 export const apiConfig = {
     Host_Info: {
-     baseURL: 'localhost:3000'
+     baseURL : 'localhost',
+     port : 3003
     }
 };
