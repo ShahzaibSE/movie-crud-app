@@ -14,6 +14,8 @@ import { MenuComponent } from './menu/menu.component';
 //Service
 import { ApiServiceService } from './api-service.service';
 import { EditMovieComponent } from './edit-movie/edit-movie.component';
+import { AuthService } from './auth.service';
+import { LoggedInGuard } from './guard.service';
 
 //Routes
 import { routes } from './app.routes';
@@ -25,7 +27,8 @@ import { ReCaptchaComponent } from './re-captcha/re-captcha.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 //Material Imports
-import {MdCardModule} from '@angular/material';
+import { MdCardModule } from '@angular/material';
+import { SampleProtectedRouteComponent } from './sample-protected-route/sample-protected-route.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import {MdCardModule} from '@angular/material';
     EditMovieComponent,
     LoginComponent,
     ReCaptchaComponent,
-    DashboardComponent
+    DashboardComponent,
+    SampleProtectedRouteComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,7 @@ import {MdCardModule} from '@angular/material';
     RouterModule.forRoot(routes),
     MdCardModule
   ],
-  providers: [ApiServiceService],
+  providers: [ApiServiceService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

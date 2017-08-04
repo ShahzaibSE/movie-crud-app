@@ -3,6 +3,7 @@
 </p>
 
 <br/> -->
+<!-- <app-menu></app-menu> -->
 <div class="card">
  
   <!-- <div class="col-lg-5 col-md-12 col-sm-12">
@@ -14,25 +15,25 @@
       <!-- <h2>Sign In <span><img src="./../../assets/Images/Lock.png" id="sign_In_Icon"></span></h2> -->
       <img src="./../../assets/Images/SignIn.jpeg" alt="Sign In">
     </div>
-    <form method="POST">
+    <form method="POST" *ngIf="!authService.getUser()">
      
       <div class="form_alignment">
           <div class="input_field_spacing"> 
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">@</span>
-              <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+              <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1" #username>
             </div>
           </div>
           <div class="input_field_spacing"> 
             <div class="input-group input-group-lg">
               <span class="input-group-addon" id="sizing-addon1">@</span>
-              <input type="text" class="form-control" placeholder="Password" aria-describedby="sizing-addon1">
+              <input type="text" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" #password>
             </div>
           </div>
           <br/>
-          <div>
+          <!-- <div>
             <div class="g-recaptcha" data-sitekey="6LdngisUAAAAALdW_0IAhtOJKpaI3BGernzdlj4y"></div>
-          </div>
+          </div> -->
         </div>
         <!-- <div class="input-group col-lg-10 input_field_spacing">
           <input type="text" class="form-control" placeholder="Movie Title">
@@ -45,7 +46,7 @@
         </div> -->
      <!-- </div> -->
      <div id="login_submit_btn_spacing" class="col-lg-12 col-md-12 col-sm-12 submit_button">
-        <button type="button" class="btn btn-danger btn-lg btn-block">Submit</button>
+        <button type="button" class="btn btn-danger btn-lg btn-block" (click)="loggedIn(username.value,password.value)">Submit</button>
      </div>
 
     </form>
@@ -53,6 +54,17 @@
   </div>
 
 </div>
+
+<div class="alert alert-danger" role="alert" *ngIf="message">
+  {{ message }}
+</div>
+
+<div class="well" *ngIf="authService.getUser()">
+   Logged in as <b>{{ authService.getUser() }}</b>
+   <a href (click)="logout()">Log out</a>
+</div>
+
+<!-- <router-outlet></router-outlet> -->
 
 <!-- <h2> Implementing reCaptcha component </h2> -->
 <!-- <md-card>
