@@ -27,8 +27,10 @@ import { ReCaptchaComponent } from './re-captcha/re-captcha.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 // Material Imports
-import { MdCardModule } from '@angular/material';
+import { MdCardModule, MdTableModule, MdHeaderRow } from '@angular/material';
 import { SampleProtectedRouteComponent } from './sample-protected-route/sample-protected-route.component';
+import { TableSortComponent } from './table-sort/table-sort.component';
+import { DataSource, CdkTableModule } from '@angular/cdk';
 
 @NgModule({
   declarations: [
@@ -42,14 +44,17 @@ import { SampleProtectedRouteComponent } from './sample-protected-route/sample-p
     LoginComponent,
     ReCaptchaComponent,
     DashboardComponent,
-    SampleProtectedRouteComponent
+    SampleProtectedRouteComponent,
+    TableSortComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
-    MdCardModule
+    MdCardModule,
+    MdTableModule,
+    CdkTableModule
   ],
   providers: [ApiServiceService, AuthService],
   bootstrap: [AppComponent]

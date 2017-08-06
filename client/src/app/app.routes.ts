@@ -4,6 +4,7 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { LoginComponent } from './login/login.component';
 import { ReCaptchaComponent } from './re-captcha/re-captcha.component';
 import { SampleProtectedRouteComponent } from './sample-protected-route/sample-protected-route.component';
+import { TableSortComponent } from './table-sort/table-sort.component';
 
 // Service
 import { AuthService } from './auth.service';
@@ -12,10 +13,11 @@ import { LoggedInGuard } from './guard.service';
 
 export var routes = [
     { path : 'add', component : AddMovieComponent },
-    { path : 'list', component : MovieListComponent },
+    // { path : 'list', component : MovieListComponent },
+    { path : 'list', component : TableSortComponent },
     { path : 'list', redirectTo: 'list'},
     { path : 'login', component : LoginComponent },
     { path : 'reCaptcha', component : ReCaptchaComponent },
-    { path : 'protected', component : SampleProtectedRouteComponent, CanActivate : [LoggedInGuard] }
+    // { path : 'protected', component : SampleProtectedRouteComponent, CanActivate : [LoggedInGuard] }
 ];
 

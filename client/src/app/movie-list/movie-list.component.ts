@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataSource, CdkHeaderRowDef, CdkColumnDef } from '@angular/cdk';
+import {MdSort} from '@angular/material';
 
 @Component({
   selector: 'app-movie-list',
