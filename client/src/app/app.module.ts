@@ -27,7 +27,7 @@ import { ReCaptchaComponent } from './re-captcha/re-captcha.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 // Material Imports
-import { MdCardModule, MdTableModule, MdHeaderRow } from '@angular/material';
+import { MdCardModule, MdTableModule, MdHeaderRow, MdSortModule } from '@angular/material';
 import { SampleProtectedRouteComponent } from './sample-protected-route/sample-protected-route.component';
 import { TableSortComponent } from './table-sort/table-sort.component';
 import { DataSource, CdkTableModule } from '@angular/cdk';
@@ -54,7 +54,8 @@ import { DataSource, CdkTableModule } from '@angular/cdk';
     RouterModule.forRoot(routes),
     MdCardModule,
     MdTableModule,
-    CdkTableModule
+    CdkTableModule,
+    MdSortModule
   ],
   providers: [ApiServiceService, AuthService],
   bootstrap: [AppComponent]
