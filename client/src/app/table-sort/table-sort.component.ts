@@ -1,6 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {DataSource} from '@angular/cdk';
-import {MdSort} from '@angular/material';
+import {MdSort, MdPaginator} from '@angular/material';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
@@ -18,9 +18,10 @@ export class TableSortComponent {
   dataSource: ExampleDataSource | null;
 
   @ViewChild(MdSort) sort: MdSort;
+  @ViewChild(MdPaginator) pagination: MdPaginator
 
   ngOnInit() {
-    this.dataSource = new ExampleDataSource(this.exampleDatabase, this.sort);
+    this.dataSource = new ExampleDataSource(this.exampleDatabase, this.sort, this.pagination);
   }
 }
 
@@ -79,7 +80,7 @@ export class ExampleDatabase {
  * should be rendered.
  */
 export class ExampleDataSource extends DataSource<any> {
-  constructor(private _exampleDatabase: ExampleDatabase, private _sort: MdSort) {
+  constructor(private _exampleDatabase: ExampleDatabase, private _sort: MdSort, private _pagination: MdPaginator) {
     super();
   }
 
